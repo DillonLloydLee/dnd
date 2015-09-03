@@ -88,5 +88,16 @@
             $this->assertEquals($max_hp, $result);
         }
 
+        function test_run_maxSkillsAreThere() {
+            Initial::addData();
+            $character = Finalize::run();
+            $skills = $character->getSkills();
+            var_dump($skills);
+
+            $result = 11;
+
+            $this->assertEquals($max_hp, $result);
+        }
+
     }
  ?>
