@@ -1,6 +1,12 @@
 <?php
 
-    require_once "CharClass.php";
+require_once "Race.php";
+require_once "CharClass.php";
+require_once "Background.php";
+require_once "Stat.php";
+require_once "Skill.php";
+require_once "Description.php";
+require_once "Character.php";
 
     class Character {
 
@@ -150,6 +156,179 @@
             }
             return $found_character;
         }
+
+        // GETTERS FOR OUTSIDE CLASS PROPERTIES :
+
+        function getName() {
+            $id = $this->getDescriptionId();
+            $description = Description::find($id);
+            $name = $description->getName();
+            return $name;
+        }
+
+        function getOther() {
+            $id = $this->getDescriptionId();
+            $description = Description::find($id);
+            $other = $description->getOther();
+            return $other;
+        }
+
+        function getAc() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getAc();
+            return $stat_total;
+        }
+
+        function getInit() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getInit();
+            return $stat_total;
+        }
+
+        function getSpeed() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getSpeed();
+            return $stat_total;
+        }
+
+        function getMaxHp() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getMaxHp();
+            return $stat_total;
+        }
+
+        function getAcrobatics() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getAcrobatics();
+            return $stat_total;
+        }
+
+        function getAnimalHandling() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getAnimalHandling();
+            return $stat_total;
+        }
+
+        function getArcana() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getArcana();
+            return $stat_total;
+        }
+
+        function getAthletics() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getAthletics();
+            return $stat_total;
+        }
+
+        function getDeception() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getAcrobatics();
+            return $stat_total;
+        }
+
+        function getHistory() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getHistory();
+            return $stat_total;
+        }
+
+        function getInsight() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getInsight();
+            return $stat_total;
+        }
+
+        function getIntimidation() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getIntimidation();
+            return $stat_total;
+        }
+
+        function getInvestigation() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getInvestigation();
+            return $stat_total;
+        }
+
+        function getMedicine() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getMedicine();
+            return $stat_total;
+        }
+
+        function getNature() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getNature();
+            return $stat_total;
+        }
+
+        function getPerception() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getPerception();
+            return $stat_total;
+        }
+
+        function getPerformance() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getPerformance();
+            return $stat_total;
+        }
+
+        function getPersuasion() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getPersuasion();
+            return $stat_total;
+        }
+
+        function getReligion() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getReligion();
+            return $stat_total;
+        }
+
+        function getSleightOfHand() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getSleightOfHand();
+            return $stat_total;
+        }
+
+        function getStealth() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getStealth();
+            return $stat_total;
+        }
+
+        function getSurvival() {
+            $id = $this->getStatId();
+            $stat = Stat::find($id);
+            $stat_total = $stat->getSurvival();
+            return $stat_total;
+        }
+
+
+
     }
 
     function saveProficiencies($loadout_id, $character_id)
@@ -268,5 +447,4 @@
         }
         return $proficiencies;
     }
-
 ?>

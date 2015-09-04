@@ -17,19 +17,19 @@
             <form action = '/stats' method='post'>
 
                 {% for background in backgrounds %}
-                <label for = '{{ background.getId }}'>
+                <div class = "col-sm-6">
                     <div class='background_select'>
-                        <input type='radio' name = 'background_id' value = '{{ background.getId }}'>
+                        <input id = '{{ background.getId }}' type='radio' name = 'background_id' value = '{{ background.getId }}'>
+                        <label for = '{{ background.getId }}'>
+
                             <h3>{{ background.getName }}</h3>
                             <p>{{ background.getDescription }}</p>
-
+                        </label>
                     </div>
-                </label>
-                <hr>
+            </div>
                 {% endfor %}
 
                 <button type='submit'>Roll your stats -></button>
-                <p> </p><br>
             </form>
             <p> </p><br>
             <form action='/class' method='get'>
